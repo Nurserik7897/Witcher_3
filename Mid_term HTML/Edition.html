@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<link rel="stylesheet" type="text/css" href="Style_of_Edition.css">
+
+<form class="transparent" id="form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+<div class="form-inner">
+<h3>Регистрация</h3>
+
+<input type="text" id="username">
+<label id="password">Пароль</label>
+<input type = "password" id = "p1"></br>
+<label id="password">Повторите Пароль</label>
+<input type = "password" id = "p2"></br>
+<label id="message">Пожалуйста, заполните поля E.mail!</label>
+<input id="email" name="email" type="text" size="20" /><br /> 
+
+<div>
+<input name="button" type="submit" value="Проверить нажмите с ctrl" onClick="ValidMail();  ValidPhone();  check(p1, p2);">
+</div>
+</div>
+</form>
+
+
+<script type="text/javascript">
+function ValidMail() {
+    var re = /^[a-z0-9_-]+@[mail]+\.([ru]{1,6}\.)?[ru]{2,6}$/i;   
+    var be = /^[a-z0-9_-]+@[gmail]+\.([com]{1,6}\.)?[com]{2,6}$/i;
+    var ce = /^[a-z0-9_-]+@[yahoo]+\.([com]{1,6}\.)?[com]{2,6}$/i;
+    var myMail = document.getElementById('email').value;
+    var valid = re.test(myMail);
+    var valid_1 = be.test(myMail);
+    var valid_2 = ce.test(myMail);
+    if (valid){ output = 'Адрес эл. почты введен правильно!';
+    }
+    else if (valid_1) {
+    	output = 'Адрес эл. почты введен правильно!';
+    
+    }
+    else if (valid_2){
+    	output = 'Адрес эл. почты введен правильно!';
+
+    }
+    else { output = 'Адрес электронной почты введен неправильно!';
+    }
+    document.getElementById('message').innerHTML = output;
+    return valid;
+}
+function ValidPhone() {
+    var re = /^\d[\d\(\)\ -]{4,14}\d$/;
+    var myPhone = document.getElementById('phone').value;
+    var valid = re.test(myPhone);
+    if (valid) output = 'Номер телефона введен правильно!';
+    else output = 'Номер телефона введен неправильно!';
+   document.getElementById('message_1').innerHTML = output;
+    return valid;
+}  
+</script>
+<script>
+
+function check(){
+    if(document.getElementById('p1').value == document.getElementById('p2').value)
+        alert('Пароли верны');
+    else 
+        alert('Пароли неверны');
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
